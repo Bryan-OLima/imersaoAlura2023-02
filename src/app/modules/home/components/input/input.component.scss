@@ -1,0 +1,45 @@
+@import '../../../../../dist/scss/variables.scss';
+
+:host {
+    input {
+        height: 25px;
+        margin-bottom: -10px;
+    
+        font-size: 0.9rem;
+        text-align: center;
+
+        width: 100%;
+
+        border-radius: 5px 0px;
+        border-width: 1px;
+        border-color: $details;
+        outline: $details;
+    
+        transition: 400ms;
+            &:focus {
+                outline-color: #000;
+                outline-width: 10px;
+    
+                border-radius: 10px;
+                
+                transition: 400ms;
+            }
+            &::placeholder {
+                color: $details;
+                text-align: center;
+            }
+            &.error {
+                outline-color: $error;
+            }
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+}

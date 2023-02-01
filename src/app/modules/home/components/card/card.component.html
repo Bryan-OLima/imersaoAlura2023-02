@@ -1,0 +1,59 @@
+<div class="top" *ngIf="isHeader">
+   <span class="mentalist">
+        O Mentalista
+   </span>
+   <span class="subtitle">
+        Adivinhe o número
+   </span>
+</div>
+<main>
+    <div class="inputs">
+        <app-input 
+            *ngIf="!isFinished; else blocked"
+            (emitGuess)="getGuess($event)" 
+            (keydown.enter)="makeGuess(secretNumber, userTry)"
+            placeholder="Insira seu palpite"
+            >
+        </app-input>
+
+        <ng-template #blocked>
+            <app-input 
+            placeholder="CLIQUE EM ATUALIZAR!"
+            [isReadonly]="true"
+            >
+            </app-input>
+        </ng-template>
+
+        <app-button 
+            *ngIf="isFinished; else looser" 
+            (click)="refreshGame()"
+            text="Atualizar"
+            >
+            Atualizar
+        </app-button>
+        
+        <ng-template #looser>
+            <app-button (click)="makeGuess(secretNumber, userTry)"></app-button>
+        </ng-template>
+    </div>
+    <div class="response">
+        <p>
+         {{response}}
+        </p> 
+     </div>
+</main>
+
+<main class="rules">
+    <h2>
+        Como o Jogo Funciona?
+    </h2>
+    <hr>
+    <p class="simple">
+        É bem simples!
+        O computador vai sortear um número de 1 á 1000 e você terá que acertar. Simples, né? O problema é que você só terá 10 chances pra acertar.
+    </p>
+    <p style="margin-bottom: 20px;">
+        <strong>Boa sorte!</strong> 😁 
+    </p>
+</main>
+

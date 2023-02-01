@@ -1,0 +1,35 @@
+@import '../../../../../dist/scss/variables.scss';
+
+:host {
+    button {
+        padding: 10px;
+
+        width: 100%;
+
+        outline: none;
+        border: none;
+        border-radius: 50px;
+
+        background-color: $button-background-color;
+        
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: $secondary-font-color;
+
+        box-shadow: 1px 5px 5px  rgba($color: #000, $alpha: 0.6);
+
+        transition: 400ms;
+
+            &:hover {
+                box-shadow: 1px 6px 4px  rgba($color: #000, $alpha: 0.6);
+                cursor: pointer;
+                background-color: #d63f42;
+
+                transition: 400ms;
+            }
+            &:active {
+                background-color: #e2585a;
+                transition: none;
+            }
+    }
+}
