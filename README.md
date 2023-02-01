@@ -36,19 +36,19 @@ Winning or loosing, this is the end of the app (unique difference between winnin
 
 # Things that you should know
 
-## <app-button>
-The <app-button> have one dynamic property called "text". That's the only way you can change the name in the button.
-The tag will be <app-button text="your text here"> </app-button> and the button will replace the standard name (standard name: "Palpitar").
+## app-button
+The app-button component have one dynamic property called "text". That's the only way you can change the name in the button.
+The tag will be: app-button text="your text here" /app-button. And the button will replace the standard name (standard name: "Palpitar").
 
-## <app-input>
-The <app-input> tag have three dynamic properties: Two of them are Inputs, and the other one is Output. You can set if your Input is readonly by setting isReadonly (false is default) to true on tag. You can change the placeholder setting placeholder="". And the component EMITS an event Emitter. That will need to add (emitGuess)="" to send a event with the value typed by user. Example:
+## app-input
+The app-input component tag have three dynamic properties: Two of them are Inputs, and the other one is Output. You can set if your Input is readonly by setting isReadonly (false is default) to true on tag. You can change the placeholder setting placeholder="". And the component EMITS an event Emitter. That will need to add (emitGuess)="" to send a event with the value typed by user. Example:
 
 <app-input 
   placeholder="new placeholder"
   isReadonly= true
   (emitGuess)="myMethod($event)"
- >
- </app-input>
+ 
+
  
  ## Question
  
